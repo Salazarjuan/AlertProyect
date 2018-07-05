@@ -1,0 +1,22 @@
+<div>
+  <nav class="mat-elevation-z8" fxLayout="row" fxLayoutAlign="start center" >
+    <mat-form-field >
+      <input matInput type="text" placeholder="Search a movie!!!" [(ngModel)]="term"/>
+    </mat-form-field>
+    <button mat-button (click)="searchMovieFirstTime()"  color="primary"><mat-icon svgIcon="search">
+    </mat-icon>Search </button>
+  </nav>
+</div>
+
+<app-list
+  [data]="data"
+  [genres]="genres">
+</app-list>
+
+<div *ngIf = "data.total_results > 20">
+  <mat-paginator [length]='data.total_results' [pageSize]='20' (page)="pageEvent = $event; page($event)">
+  </mat-paginator>
+</div>
+
+
+

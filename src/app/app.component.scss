@@ -1,0 +1,18 @@
+mat-toolbar {
+  background: #303030;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  padding-left: 15%;
+  padding-right: 15%
+}
+.mat-button{
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+.principal-content-container{
+  z-index: 1;
+  padding: 75px 15% 25px 15%;
+  justify-content: center;
+  min-height: 550px;
+}

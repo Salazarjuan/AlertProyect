@@ -1,0 +1,24 @@
+<div class="mat-elevation-z8" fxLayout="row wrap" style="justify-content: center; background-color: #303030; width: 100%">
+  <div class="mat-elevation-z8" style="width: 100%; padding: 10px">
+    <mat-form-field >
+      <input matInput type="text" placeholder="Search an actor!!!" [(ngModel)]="term"/>
+    </mat-form-field>
+    <button mat-button (click)="searchActorFirstTime()"  color="primary">
+      <mat-icon svgIcon="search"></mat-icon>
+      Search
+    </button>
+  </div>
+
+
+  <div *ngIf = "term !== ''">
+    <app-actor-list
+      [data]="actorSearchData">
+
+    </app-actor-list>
+  </div>
+
+  <div *ngIf = "actorSearchData.total_results > 20" style="width: 100%">
+    <mat-paginator [length]='actorSearchData.total_results' [pageSize]='20' (page)="pageEvent = $event; page($event)">
+    </mat-paginator>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.mat-card{
+  max-width: 235px;
+  padding: 0px;
+  //background-color: #303030;
+}
+
+.mat-card-title{
+  padding: 10px;
+  font-size: 14px;
+  height: 32px;
+  /*max-height: 32px;
+  min-height: 32px;
+  min-width: 235px;*/
+}
+
+.mat-card-subtitle{
+  padding: 10px;
+  font-size: 14px;
+  /*max-height: 32px;
+  min-height: 32px;
+  min-width: 235px;*/
+}
+
+.image_container{
+  width: 235px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.title_container{
+  width: 100%;
+}
+
+img{
+  //width: 100%;
+}

@@ -1,0 +1,14 @@
+<div fxLayout="row" fxLayoutAlign="start center" style="justify-content: initial;width: 100%; padding-right: 5px">
+  <!--mat-progress-spinner
+    [diameter]="40"
+    color="primary"
+    mode= "determinate"
+    value = "{{data.vote_average*10}}">
+  </mat-progress-spinner-->
+  <mat-icon svgIcon="favorite" style="fill: red"></mat-icon>
+  <h3>{{data.vote_average*10}}%</h3>
+  <!--div [ngClass]="{'high': data.popularity >= 12, 'normal': data.popularity < 12 && data.popularity >= 5, 'low': data.popularity < 5}">Popularity: {{ data.popularity | number:'1.1-2' }}</div>
+  <div [ngClass]="{'invisible': data.vote_average === 0 }">Vote average: {{ data.vote_average }}</div>
+  <div *ngIf="data.vote_count !== 0">Votes: {{ data.vote_count }}</div-->
+</div>
+

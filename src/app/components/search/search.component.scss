@@ -1,0 +1,72 @@
+.docs-navbar-header[_ngcontent-c1] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+app-navbar .docs-navbar, app-navbar .docs-navbar-header {
+  background: #e91e63;
+  font-size: 14px;
+}
+user agent stylesheet
+article, aside, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+app-navbar {
+  color: white;
+}
+.body {
+  font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  margin: 0;
+  color: white;
+}
+
+.mat-elevation-z8 {
+  background: #303030;
+  padding: 14px;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+.mat-button{
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+}
+
+.mat-form-field{
+  max-width: 25%;
+  color: #e91e63;
+  font-size: 14px;
+}
+
+.mat-card {
+  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  background: #424242;
+  color: white;
+  display: block;
+  position: relative;
+  padding: 24px;
+  border-radius: 2px;
+  min-height: 500px;
+  max-height: 500px;
+}
+
+.mat-card-title .mat-card {
+  font-size: 50px;
+  color: black;
+}
+
+.table {
+  width: 100%;
+}
+
+label{
+  color: white;
+  font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  padding-right: 25px;
+  padding-left: 25px;
+  font-size: 14px;
+}
+
+

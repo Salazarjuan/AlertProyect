@@ -1,0 +1,49 @@
+<div style="background-image: url('../assets/Background/general-background.svg'); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover">
+  <mat-toolbar style="position: fixed;z-index: 5" >
+
+    <button mat-button routerLink="/home" routerLinkActive="active" color="primary">
+      <mat-icon svgIcon="home"></mat-icon>
+      Home
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="movies" color="primary">
+      <mat-icon svgIcon="movie"></mat-icon>
+      Movies
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="actors" color="primary">
+      <mat-icon svgIcon="people"></mat-icon>
+      Actors
+    </button>
+
+    <mat-menu #movies="matMenu">
+      <button mat-menu-item routerLink="/movies/popular_movies" routerLinkActive="active">Popular movies</button>
+      <button mat-menu-item routerLink="/movies/top_movies" routerLinkActive="active">Top rated movies</button>
+      <button mat-menu-item routerLink="/movie/search" routerLinkActive="active" >
+        <mat-icon svgIcon="search"></mat-icon>Search movies</button>
+    </mat-menu>
+
+    <mat-menu #genres="matMenu" >
+      <button mat-menu-item *ngFor="let genre of genresMovieList">{{ genre.name }}</button>
+    </mat-menu>
+
+    <mat-menu #actors="matMenu">
+      <button mat-menu-item routerLink="/actors/popular_actors" routerLinkActive="active" >Popular actors</button>
+      <button mat-menu-item routerLink="/actors/search" routerLinkActive="active" >
+        <mat-icon svgIcon="search"></mat-icon>Search actors</button>
+    </mat-menu>
+
+  </mat-toolbar>
+
+
+  <div  class="principal-content-container" >
+    <router-outlet></router-outlet>
+  </div>
+
+  <mat-toolbar style="height: 300px">
+
+  </mat-toolbar>
+
+</div>
+
+

@@ -1,0 +1,10 @@
+<div fxLayout="row wrap" style="justify-content: center">
+  <div style="padding: 10px" *ngFor="let actor of data.results; let i = index">
+    <mat-card class="mat-card" >
+      <mat-card-title class="mat-card-title">
+        {{actor.name}}
+      </mat-card-title>
+    </mat-card>
+  </div>
+</div>
+

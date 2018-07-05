@@ -1,0 +1,118 @@
+
+<div>
+  <table mat-table [dataSource]="data.results" >
+    <ng-container matColumnDef="title">
+      <th *matHeaderCellDef role="columnheader" mat-header-cell class="mat-header-cell cdk-column-position mat-column-position ng-star-inserted">Movie</th>
+      <td *matCellDef="let lesson" (click)="onClick(lesson.id)">
+        <h2>{{lesson.title}}</h2>
+        {{ (lesson.overview.length > 100) ? (lesson.overview | slice:0:100) + '....' : (lesson.overview) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="genres">
+      <th *matHeaderCellDef role="columnheader" mat-header-cell class="mat-header-cell cdk-column-position mat-column-position ng-star-inserted">Genres</th>
+      <td *matCellDef="let lesson" (click)="onClick(lesson.id)">
+        <app-genres
+          [genres]="genres"
+          [genreIds]="lesson.genre_ids">
+        </app-genres>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="releaseDate">
+      <th *matHeaderCellDef role="columnheader" mat-header-cell class="mat-header-cell cdk-column-position mat-column-position ng-star-inserted">Release date</th>
+      <td *matCellDef="let lesson" (click)="onClick(lesson.id)">
+        {{ lesson.release_date }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="stats">
+      <th *matHeaderCellDef role="columnheader" mat-header-cell class="mat-header-cell cdk-column-position mat-column-position ng-star-inserted">Stats</th>
+      <td *matCellDef="let lesson" (click)="onClick(lesson.id)">
+        <app-stats
+          [data]="{ popularity: lesson.popularity, vote_average: lesson.vote_average, vote_count: lesson.vote_count }">
+        </app-stats>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header-row ng-star-inserted" role="row"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns" class="mat-header-row ng-star-inserted" role="row"></tr>
+
+  </table>
+</div>
+
+<div fxLayout="row wrap" style="justify-content: left">
+  <div class="my-mat-card" style="padding: 10px" *ngFor="let movie of data.results; let i = index">
+    <mat-card class="mat-card">
+      <mat-card-title class="mat-card-title">
+        {{movie.title}}
+      </mat-card-title>
+      <div *ngIf="movie.poster_path == null; then content  else other_content">here is ignored</div>
+      <ng-template #content>
+        <div class="image_container">
+          <a [routerLink] = "['/detail/movie', movie.id]" >
+            <img mat-card-image src="../../../assets/No_Image/Movie/film-reel.png" title={{movie.title}} alt={{movie.title}}>
+          </a>
+        </div>
+      </ng-template>
+      <ng-template #other_content>
+        <div class="image_container">
+          <a [routerLink] = "['/detail/movie', movie.id]" >
+            <img mat-card-image src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}" title={{movie.title}} alt={{movie.title}}>
+          </a>
+        </div>
+      </ng-template>
+      <app-genres
+        [genres]="genres"
+        [genreIds]="movie.genre_ids">
+      </app-genres>
+      <!--mat-card-actions>
+        <a mat-raised-button color="primary" [routerLink] = "['/credits', movie.id]">Meet the cast!!!</a>
+      </mat-card-actions-->
+    </mat-card>
+  </div>
+</div>
+
+
+<!--div class="app-list">
+  <table class="mat-elevation-z8">
+    <thead>
+    <tr>
+      <th>Movie</th>
+      <th>Genre</th>
+      <th>Release date</th>
+      <th>Stats</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let movie of data.results" (click)="onClick(movie.id)">
+
+      <td class="movie">
+        <div>
+          <h2>{{movie.title}}</h2>
+          {{ (movie.overview.length > 100) ? (movie.overview | slice:0:100) + '....' : (movie.overview) }}
+        </div>
+      </td>
+
+      <td>
+        <app-genres
+          [genres]="genres"
+          [genreIds]="movie.genre_ids">
+        </app-genres>
+      </td>
+
+      <td>{{ movie.release_date }}</td>
+
+      <td>
+        <app-stats
+          [data]="{ popularity: movie.popularity, vote_average: movie.vote_average, vote_count: movie.vote_count }">
+        </app-stats>
+      </td>
+
+    </tr>
+
+    </tbody>
+  </table>
+</div-->

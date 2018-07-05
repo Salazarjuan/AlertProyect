@@ -1,0 +1,33 @@
+<div fxLayout="row wrap" style="justify-content: center">
+  <div class="my-mat-card" style="padding: 10px" *ngFor="let movie of upcomingMovies; let i = index">
+    <mat-card class="mat-card">
+      <mat-card-title class="mat-card-title">
+        {{movie.title}}
+      </mat-card-title>
+      <div *ngIf="movie.poster_path == null; then content  else other_content">here is ignored</div>
+      <ng-template #content>
+        <div class="image_container">
+          <a [routerLink] = "['/detail/movie', movie.id]" >
+            <img mat-card-image src="../../../assets/No_Image/Movie/film-reel.png" title={{movie.title}} alt={{movie.title}}>
+          </a>
+        </div>
+      </ng-template>
+      <ng-template #other_content>
+        <div class="image_container">
+          <a [routerLink] = "['/detail/movie', movie.id]" >
+            <img mat-card-image src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}" title={{movie.title}} alt={{movie.title}}>
+          </a>
+        </div>
+      </ng-template>
+      <app-genres
+        [genres]="genres"
+        [genreIds]="movie.genre_ids">
+      </app-genres>
+    </mat-card>
+  </div>
+</div>
+
+<div *ngIf = "total_results > 20">
+  <mat-paginator [length]='total_results' [pageSize]='20' (page)="pageEvent = $event; page($event)">
+  </mat-paginator>
+</div>
