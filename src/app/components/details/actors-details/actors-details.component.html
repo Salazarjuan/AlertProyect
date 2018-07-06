@@ -1,3 +1,46 @@
-<p>
-  actors-details works!
-</p>
+<div class="mat-elevation-z18" style="padding:20px;  background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover">
+
+  <div fxLayout="row" fxFlexAlign="center center" style="padding: 20px; position: center" >
+
+    <div class="principal_image_container">
+      <div *ngIf="actor.profile_path == null; then content_poster  else other_content_poster">here is ignored</div>
+      <ng-template #content_poster>
+        <a [routerLink] = "['/detail/actor', actor.id]" >
+          <img src="../../../assets/No_Image/Actor/user.png" title={{actor.name}} alt={{actor.name}}>
+        </a>
+      </ng-template>
+      <ng-template #other_content_poster>
+        <a [routerLink] = "['/detail/actor', actor.id]" >
+          <img src="http://image.tmdb.org/t/p/original/{{actor.profile_path}}" title={{actor.name}} alt={{actor.name}}>
+        </a>
+      </ng-template>
+    </div>
+
+    <div>
+      <mat-card style="background-color: #303030; opacity: 0.7">
+        <mat-card-header>
+          <mat-card-title>{{ actor.name }}</mat-card-title>
+          <mat-card-subtitle>{{ actor.birthday }}
+
+          <div *ngIf="actor.deathday !== null; then content_poster  else other_content_poster">here is ignored</div>
+          <ng-template #content_poster>
+            -> {{ actor.deathday }}
+          </ng-template>
+          <ng-template #other_content_poster>
+
+          </ng-template>
+
+          </mat-card-subtitle>
+
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{ actor.biography }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+
+</div>

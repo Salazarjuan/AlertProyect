@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import { MovieDescriptor } from '../types/detail.type';
+import {ActorDescriptor, MovieDescriptor} from '../types/detail.type';
 
 
 @Injectable({
@@ -30,7 +30,7 @@ export class DetailService {
       .get(this.urlActor + idActor + this.key)
       .pipe(
         map((data)=>{
-          return MovieDescriptor.import(data);
+          return ActorDescriptor.import(data);
         })
       );
   }

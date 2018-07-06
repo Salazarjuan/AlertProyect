@@ -10,7 +10,7 @@ import {DomSanitizer} from "@angular/platform-browser";
   templateUrl: './movies-details.component.html',
   styleUrls: ['./movies-details.component.scss']
 })
-export class MoviesDetailsComponent{
+export class MoviesDetailsComponent implements OnInit{
 
   private routerSubscribe: any;
   public movie: MovieDescriptor = new MovieDescriptor();
@@ -32,8 +32,6 @@ export class MoviesDetailsComponent{
 
   ngOnInit() {
     this.searchDetailsMovies();
-    //this.searchSimilarMovies();
-    //this.searchCastMovies();
   }
 
   searchDetailsMovies(){
@@ -59,36 +57,7 @@ export class MoviesDetailsComponent{
 
         }
       );
-
-
-
       //console.log(this.movie);
     });
   }
-
-  /*
-  searchSimilarMovies(){
-    //https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=977cda5d9bfac0a6b0252ef0272785b6&language=en-US&page=1
-    this.search.getSimilarMovies(this.idMovie).subscribe(
-      (data: any) => {
-        this.similarMovies = data;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
-
-  searchCastMovies(){
-    console.log(this.idMovie);
-    this.credits.getCredits(this.idMovie).subscribe(
-      (data: any) => {
-        this.cast = data;
-      },
-      (error) => {
-        console.log(error);
-
-      }
-    );
-  }*/
 }

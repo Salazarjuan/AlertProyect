@@ -101,3 +101,32 @@ export class SpokenLanguageDescriptor {
     return spokenLanguageDescriptor;
   }
 }
+
+export class ActorDescriptor {
+
+  public id: number;
+  public birthday: string;
+  public deathday: string;
+  public name: string;
+  public gender: number;
+  public biography: string;
+  public popularity: number;
+  public place_of_birth: number;
+  public profile_path: string;
+
+  public static import(rawData: any) {
+    let actor: ActorDescriptor = new ActorDescriptor();
+
+    actor.id = rawData.hasOwnProperty('id') ? rawData.id : 0;
+    actor.birthday = rawData.hasOwnProperty('birthday') ? rawData.birthday: '';
+    actor.deathday = rawData.hasOwnProperty('deathday') ? rawData.deathday : '';
+    actor.name = rawData.hasOwnProperty('name') ? rawData.name : '';
+    actor.gender = rawData.hasOwnProperty('gender') ? rawData.gender : 0;
+    actor.biography = rawData.hasOwnProperty('biography') ? rawData.biography : '';
+    actor.popularity = rawData.hasOwnProperty('popularity') ? rawData.popularity : 0;
+    actor.place_of_birth = rawData.hasOwnProperty('place_of_birth') ? rawData.place_of_birth : 0;
+    actor.profile_path = rawData.hasOwnProperty('profile_path') ? rawData.profile_path : '';
+
+    return actor;
+  }
+}

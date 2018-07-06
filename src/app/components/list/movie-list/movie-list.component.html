@@ -19,10 +19,9 @@
           </a>
         </div>
       </ng-template>
-      <app-genres
-        [genres]="genres"
-        [genreIds]="movie.genre_ids">
-      </app-genres>
+      <mat-chip-list>
+        <mat-chip *ngFor="let genre of genres">{{ genre.name }}</mat-chip>
+      </mat-chip-list>
     </mat-card>
   </div>
 </div>

@@ -20,10 +20,11 @@ export class MovieListComponent implements OnInit {
 
   ngOnInit() {
     //this.dataSource.paginator = this.paginator;
-    console.log(this.data);
   }
   constructor(
     private router: Router
   ) { }
+
+
 
 }
