@@ -133,12 +133,12 @@ import { NowPlayingMoviesComponent } from './components/movies/now-playing-movie
 })
 export class AppModule {
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon('search', sanitizer.bypassSecurityTrustResourceUrl('/../../../assets/Icons/round-search-24px.svg'));
-    iconRegistry.addSvgIcon('tv', sanitizer.bypassSecurityTrustResourceUrl('/../../../assets/Icons/round-tv-24px.svg'));
-    iconRegistry.addSvgIcon('movie', sanitizer.bypassSecurityTrustResourceUrl('/../../../assets/Icons/round-local_movies-24px.svg'));
-    iconRegistry.addSvgIcon('people', sanitizer.bypassSecurityTrustResourceUrl('/../../../assets/Icons/round-people-24px.svg'));
-    iconRegistry.addSvgIcon('favorite', sanitizer.bypassSecurityTrustResourceUrl('/../../../assets/Icons/baseline-favorite-24px.svg'));
-    iconRegistry.addSvgIcon('home', sanitizer.bypassSecurityTrustResourceUrl('/../../../assets/Icons/baseline-home-24px.svg'));
-    iconRegistry.addSvgIcon('event', sanitizer.bypassSecurityTrustResourceUrl('/../../../assets/Icons/baseline-event-24px.svg'));
+    iconRegistry.addSvgIcon('search', sanitizer.bypassSecurityTrustResourceUrl('////assets/Icons/round-search-24px.svg'));
+    iconRegistry.addSvgIcon('tv', sanitizer.bypassSecurityTrustResourceUrl('////assets/Icons/round-tv-24px.svg'));
+    iconRegistry.addSvgIcon('movie', sanitizer.bypassSecurityTrustResourceUrl('////assets/Icons/round-local_movies-24px.svg'));
+    iconRegistry.addSvgIcon('people', sanitizer.bypassSecurityTrustResourceUrl('////assets/Icons/round-people-24px.svg'));
+    iconRegistry.addSvgIcon('favorite', sanitizer.bypassSecurityTrustResourceUrl('////assets/Icons/baseline-favorite-24px.svg'));
+    iconRegistry.addSvgIcon('home', sanitizer.bypassSecurityTrustResourceUrl('////assets/Icons/baseline-home-24px.svg'));
+    iconRegistry.addSvgIcon('event', sanitizer.bypassSecurityTrustResourceUrl('////assets/Icons/baseline-event-24px.svg'));
   }
 }
