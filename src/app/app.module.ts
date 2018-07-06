@@ -116,7 +116,7 @@ import { NowPlayingMoviesComponent } from './components/movies/now-playing-movie
       }
       ,
       {
-        path: '',
+        path: 'home',
         component: HomePageComponent
       }
     ]),
