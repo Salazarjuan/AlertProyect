@@ -1,10 +1,10 @@
 <div style="background-image: url('../assets/Background/general-background.svg'); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover">
   <mat-toolbar style="position: fixed;z-index: 5" >
 
-    <button mat-button routerLink="/home" routerLinkActive="active" color="primary">
+    <a mat-button [routerLink] = "['/']" >
       <mat-icon svgIcon="home"></mat-icon>
       Home
-    </button>
+    </a>
 
     <button mat-button [matMenuTriggerFor]="movies" color="primary">
       <mat-icon svgIcon="movie"></mat-icon>

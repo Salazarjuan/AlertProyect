@@ -113,10 +113,9 @@ import { NowPlayingMoviesComponent } from './components/movies/now-playing-movie
       {
         path: 'detail/actor/:id',
         component: ActorsDetailsComponent
-      }
-      ,
+      },
       {
-        path: 'home',
+        path: '',
         component: HomePageComponent
       }
     ]),
